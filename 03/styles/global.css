@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 .p, .t, .v {
     border: 3px solid transparent;
     min-height: 50px;
@@ -14,13 +15,61 @@
 }
 
 .p {
-    border-color: #ffffba
+    border-color: #ffffba;
+    max-width: 100%;
+    grid-area: p;
 }
 
 .t {
     border-color: #ffdfba;
+    grid-area: t;
 }
 
 .v {
     border-color: #baffc9;
+    height: 0;
+    padding-bottom: calc(315 / 500 * 100%);
+    position: relative;
+    grid-area: v;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 600px), (min-width: 1119px) {
+    body {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+
+    }
+}
+
+@media (min-width: 600px) {
+    body {
+        grid-template-columns: minmax(200px, 50%) auto;
+        grid-template-areas:
+            "p t"
+            "v t"
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        max-width: 1400px;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "p v"
+            "t t"
+    }
 }
