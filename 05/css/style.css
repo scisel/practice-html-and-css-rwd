@@ -1,5 +1,6 @@
 :root {
     --orange: orange;
+    --orange-items: rgb(255, 216, 144);
     --blue: blue;
     --green: green;
     --grey: grey;
@@ -15,26 +16,26 @@
 
 .site-container {
     width: 100%;
-    border: 3px solid var(--green);
+    border: 1px solid var(--green);
+    padding: 0.5vh;
 
 }
 
 .section-container {
     width: 100%;
     border: 1px solid var(--blue);
-    margin: 0 auto;
-    position: relative;
 }
 
 .nav {
     display: flex;
+    position: relative;
+    gap: 6rem;
     justify-content: flex-end;
     align-items: center;
-    gap: 6rem;
 }
 
 .nav__menu {
-margin-right: 1rem;
+    margin-right: 1rem;
 }
 
 .nav__logo {
@@ -50,7 +51,7 @@ input {
 
 .menu__items {
     width: 100%;
-    background: var(--orange);
+    background-color: var(--orange);
 }
 
 label {
@@ -59,18 +60,21 @@ label {
     padding-top: 5px;
 }
 
-#menu-dropper:checked + .menu__items {
+#menu-dropper:checked+.menu__items {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
+    z-index: 1;
+    background: var(--orange-items);
 }
 
 @media (min-width: 800px) {
 
     .section-container {
-        max-width: 1000px;
+        width: 1000px;
+        margin: 0 auto;
     }
 
     label, input {
@@ -106,3 +110,43 @@ label {
     }
 }
 
+.articles,
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+}
+
+.article {
+    min-height: 40vh;
+    background-color: var(--orange);
+}
+
+.testimonial {
+    background-color: var(--orange);
+}
+
+.testimonial--one {
+    min-height: 20vh;
+}
+
+.testimonial--two,
+.testimonial--three {
+    min-height: 30vh;
+}
+
+@media (min-width: 800px) {
+
+    .articles,
+    .testimonials {
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: 2vh;
+    }
+
+    .article,
+    .testimonial {
+        margin: 1vh 0;
+        flex-basis: 50%;
+    }
+}
