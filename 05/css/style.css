@@ -118,7 +118,7 @@ label {
 }
 
 .article {
-    min-height: 40vh;
+    min-height: 46vh;
     background-color: var(--orange);
 }
 
@@ -149,4 +149,18 @@ label {
         margin: 1vh 0;
         flex-basis: 50%;
     }
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-item {
+    background-color: var(--orange);
+    width: 20vh;
+    height: 5vh;
+    margin: 0.5vh 0;
 }
